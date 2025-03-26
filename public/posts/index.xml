@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Emrik Åberg Wenthzel - Game Programmer</title>
-    <link>/posts/</link>
+    <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on Emrik Åberg Wenthzel - Game Programmer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Mar 2025 15:32:46 +0100</lastBuildDate>
-    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compute Shader particle system with Depth collission</title>
-      <link>/posts/particlesystem/</link>
+      <link>//localhost:1313/posts/particlesystem/</link>
       <pubDate>Wed, 26 Mar 2025 15:32:46 +0100</pubDate>
-      <guid>/posts/particlesystem/</guid>
+      <guid>//localhost:1313/posts/particlesystem/</guid>
       <description></description>
     </item>
     <item>
       <title>SSAO</title>
-      <link>/posts/ssao/</link>
+      <link>//localhost:1313/posts/ssao/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:50 +0100</pubDate>
-      <guid>/posts/ssao/</guid>
+      <guid>//localhost:1313/posts/ssao/</guid>
       <description></description>
     </item>
     <item>
       <title>Cooking Grandma</title>
-      <link>/posts/cookinggrandma/</link>
+      <link>//localhost:1313/posts/cookinggrandma/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
-      <guid>/posts/cookinggrandma/</guid>
+      <guid>//localhost:1313/posts/cookinggrandma/</guid>
       <description></description>
     </item>
   </channel>
