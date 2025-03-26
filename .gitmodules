@@ -2,3 +2,7 @@
 	path = themes/kayal
 	url = https://github.com/mnjm/kayal.git
 	branch = main
+[submodule "public/public"]
+	path = public/public
+	url = https://github.com/Emriko/portfolio
+	branch = main
