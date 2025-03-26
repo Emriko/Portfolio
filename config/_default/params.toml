@@ -22,13 +22,13 @@ highlightCurrentMenu = true
 # The sections to display in the recent articles list. If not provided, the section with the most articles is used.
 mainSections = ["posts"]
 # Whether to remove Hugo and theme attribution in the footer.
-removeAttribution = false
+removeAttribution = true
 # Add the last build date (i.e., the last updated date) to the footer.
 lastUpdate = false
 # Whether to show anchor links in headings. Can be overridden by Page-specific `showHeadingAnchors` in its front matter.
 showHeadingAnchors = true
 # Whether to enable search. Needs JSON output for this to work.
-enableSearch = true
+ enableSearch = true
 
 # Site search engine verification tags.
 # [verification]
@@ -52,20 +52,20 @@ showMoreDest = "/posts"
 # [Optional] Displayed at the top of your homepage.
 # headline = "👋 Welcome to my site"
 # [Optional] Path to the profile image relative to assets/ folder. Minimum size: 200x200px.
-# image = "imgs/profile.svg"
+ image = "profile.png"
 # Image position.
 where = "right"  # Options: right, left, top
 
 # Article settings
 [article]
 # Whether to display article dates.
-showDate = true
+showDate = false
 # Whether to display modified dates of articles.
-showModDate = true
+showModDate = false
 # Whether to display reading time of articles.
-showReadingTime = true
+showReadingTime = false
 # Whether to display tags mentioned in the front matter.
-showTags = true
+showTags = false
 # Whether to display next/previous article links in the article footer.
 showPagination = true
 # Whether to reverse the direction of next/previous article links.
@@ -109,11 +109,11 @@ cardView = true
 showRSS = false
 
 # Social links
-# [[social]]
-# name = "GitHub"
-# icon = "github"
-# url = "https://github.com/mnjm/kayal"
-#
+ [[social]]
+ name = "GitHub"
+ icon = "github"
+ url = "https://github.com/Emriko"
+
 
  [[social]]
  name = "Email"
