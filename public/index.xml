@@ -6,8 +6,29 @@
     <description>Recent content on Emrik Åberg Wenthzel - Game Programmer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Mar 2025 14:10:46 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 26 Mar 2025 15:32:46 +0100</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compute Shader particle system with Depth collission</title>
+      <link>/posts/particlesystem/</link>
+      <pubDate>Wed, 26 Mar 2025 15:32:46 +0100</pubDate>
+      <guid>/posts/particlesystem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSAO</title>
+      <link>/posts/ssao/</link>
+      <pubDate>Wed, 26 Mar 2025 15:31:50 +0100</pubDate>
+      <guid>/posts/ssao/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cooking Grandma</title>
+      <link>/posts/cookinggrandma/</link>
+      <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
+      <guid>/posts/cookinggrandma/</guid>
+      <description></description>
+    </item>
     <item>
       <title>About me</title>
       <link>/about/</link>
