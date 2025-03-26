@@ -6,7 +6,7 @@
 # Site's language code
 languageCode = 'en-us'
 
-# title = "Emrik Åberg Wenthzel - Game Programmer"
+title = "Emrik Åberg Wenthzel - Game Programmer"
 
 theme = "kayal" # UNCOMMENT THIS LINE
 

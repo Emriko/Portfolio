@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title></title>
+    <title>Emrik Åberg Wenthzel - Game Programmer</title>
     <link>//localhost:1313/</link>
-    <description>Recent content on </description>
+    <description>Recent content on Emrik Åberg Wenthzel - Game Programmer</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Mar 2025 14:12:51 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 26 Mar 2025 14:10:46 +0100</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Pos1</title>
-      <link>//localhost:1313/posts/pos1/</link>
-      <pubDate>Wed, 26 Mar 2025 14:12:51 +0100</pubDate>
-      <guid>//localhost:1313/posts/pos1/</guid>
-      <description>testing some stuff
-</description>
-    </item>
-    <item>
-      <title>About</title>
+      <title>About me</title>
       <link>//localhost:1313/about/</link>
       <pubDate>Wed, 26 Mar 2025 14:10:46 +0100</pubDate>
       <guid>//localhost:1313/about/</guid>
-      <description>also testing
+      <description>Gameplay and Graphics programmer
+Ever since I was young I have been very technical and loved to solve problems. Usually starting with the to me most intuitive paths and love to try differnet things until it eventually falls in place
+After 3 years of computer science courses and a year long stint at Arlanda airpot I found myself at The Game Assembly, where I truly found my programming passion working with what i love.
 </description>
     </item>
   </channel>

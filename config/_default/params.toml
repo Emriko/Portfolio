@@ -24,11 +24,11 @@ mainSections = ["posts"]
 # Whether to remove Hugo and theme attribution in the footer.
 removeAttribution = true
 # Add the last build date (i.e., the last updated date) to the footer.
-lastUpdate = false
+lastUpdate = true
 # Whether to show anchor links in headings. Can be overridden by Page-specific `showHeadingAnchors` in its front matter.
 showHeadingAnchors = true
 # Whether to enable search. Needs JSON output for this to work.
- enableSearch = true
+ enableSearch = false
 
 # Site search engine verification tags.
 # [verification]
@@ -42,7 +42,7 @@ showHeadingAnchors = true
 # Whether to show recent items on the homepage.
 showRecent = true
 # Heading label for recent items.
-showRecentLabel = "Featured"
+showRecentLabel = "Projekts"
 # Number of recent items to show.
 showRecentItems = 4
 # Whether to display a "Show more" link at the end of recent section that directs to `showMoreDest`.
@@ -50,7 +50,7 @@ showMore = true
 showMoreDest = "/posts"
 [homepage.profile]
 # [Optional] Displayed at the top of your homepage.
-# headline = "👋 Welcome to my site"
+ headline = "👋 I'm Emrik"
 # [Optional] Path to the profile image relative to assets/ folder. Minimum size: 200x200px.
  image = "profile.png"
 # Image position.

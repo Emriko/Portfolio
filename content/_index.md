@@ -5,8 +5,11 @@ draft: false
 showHeadingAnchors: false
 ---
 
-Kayal is a Hugo theme designed to be minimal and lightweight, with markdown-ish aesthetics for personal blog sites.
+Welcome, I'm a video game programmer with focus on Graphics and gameplay programming. 
 
-You can find the source and config files of this site in [here](https://github.com/mnjm/kayal/tree/exampleSite).
+Here you can see some of my project that I have work on and developed. 
+I am looking for an internship starting August 2025 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum, tellus non varius viverra, massa justo porttitor risus, quis tempor ante magna at elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In imperdiet metus arcu, sed mattis metus vehicula non. Integer quis est sem. Ut hendrerit lobortis diam sit amet malesuada. Quisque lobortis nisi et ipsum aliquam placerat. Sed ullamcorper felis nec ex facilisis, eget faucibus turpis venenatis.
+I am part of The Game Assembly's internship program. As per the agreement between the Game Industry and The Game Assembly,
+neither student nor company may be in contact with one another regarding internships before April 23rd.
+Any internship offers can be made on May 6th, at the earliest.
