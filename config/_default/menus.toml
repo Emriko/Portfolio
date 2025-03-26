@@ -9,8 +9,8 @@
 # `pre` is an icon ID. For a list of all available icons, check [https://github.com/mnjm/kayal/tree/main/assets/icons]
 
  [[main]]
- name = "posts"
- title = "Posts"
+ name = "projects"
+ title = "Projects"
  url = "/posts/"
  weight = 1
 
@@ -23,5 +23,5 @@
  [[main]]
  name = "github"
  pre = "github"
- url = "https://github.com/mnjm/kayal"
+ url = "https://github.com/Emriko"
  weight = 4
