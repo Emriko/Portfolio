@@ -1,43 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emrik Åberg Wenthzel - Game Programmer</title>
-    <link>//localhost:1313/</link>
+    <link>/</link>
     <description>Recent content on Emrik Åberg Wenthzel - Game Programmer</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Mar 2025 15:32:46 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compute Shader particle system with Depth collission</title>
-      <link>//localhost:1313/posts/particlesystem/</link>
+      <link>/posts/particlesystem/</link>
       <pubDate>Wed, 26 Mar 2025 15:32:46 +0100</pubDate>
-      <guid>//localhost:1313/posts/particlesystem/</guid>
+      <guid>/posts/particlesystem/</guid>
       <description></description>
     </item>
     <item>
       <title>SSAO</title>
-      <link>//localhost:1313/posts/ssao/</link>
+      <link>/posts/ssao/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:50 +0100</pubDate>
-      <guid>//localhost:1313/posts/ssao/</guid>
+      <guid>/posts/ssao/</guid>
       <description></description>
     </item>
     <item>
       <title>Cooking Grandma</title>
-      <link>//localhost:1313/posts/cookinggrandma/</link>
+      <link>/posts/cookinggrandma/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
-      <guid>//localhost:1313/posts/cookinggrandma/</guid>
+      <guid>/posts/cookinggrandma/</guid>
       <description></description>
     </item>
     <item>
       <title>About me</title>
-      <link>//localhost:1313/about/</link>
+      <link>/about/</link>
       <pubDate>Wed, 26 Mar 2025 14:10:46 +0100</pubDate>
-      <guid>//localhost:1313/about/</guid>
-      <description>Gameplay and Graphics programmer
-Ever since I was young I have been very technical and loved to solve problems. Usually starting with the to me most intuitive paths and love to try differnet things until it eventually falls in place
-After 3 years of computer science courses and a year long stint at Arlanda airpot I found myself at The Game Assembly, where I truly found my programming passion working with what i love.
-</description>
+      <guid>/about/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Gameplay and Graphics programmer&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;figure class=&#34;alignright&#34;&gt;&lt;img src=&#34;/profile.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;Ever since I was young I have been very technical and loved to solve problems. Usually starting with the to me most intuitive paths and love to try differnet things until it eventually falls in place&lt;/p&gt;&#xA;&lt;p&gt;After 3 years of computer science courses and a year long stint at Arlanda airpot I found myself at The Game Assembly, where I truly found my programming passion working with what i love.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
