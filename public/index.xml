@@ -20,17 +20,14 @@
       <link>//localhost:1313/posts/ssao/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:50 +0100</pubDate>
       <guid>//localhost:1313/posts/ssao/</guid>
-      <description>Screen Space Ambient Occlusion more commonly know as SSAO is a post processing technique that is used to aproximate how occluded a 3D scene pixel would be. This is done to adjust the worlds ambient light accordingly to mimic the effect of the pixels occlusion. This is done as a screen space pass taking in geometry positions and normals, hence the name Screen Space Ambient Occlusion.
-Implementation </description>
+      <description> </description>
     </item>
     <item>
-      <title>Cooking Grandma</title>
+      <title>Cooking Grandma 👵</title>
       <link>//localhost:1313/posts/cookinggrandma/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
       <guid>//localhost:1313/posts/cookinggrandma/</guid>
-      <description> Type Description Engine Unity Timeline 3 days Cooking Grandma is a mutiple award winning Game Jam hosted by The Game Assembly with the theme of &ldquo;Combination&rdquo;. I can hands down say that the work on Cooking Grandma was the most fun I have had with a project durring the stint at TGA.
-In just a couple of days the teamwork, creativity, and laughs really carried this project through the door. With no time to say no and just have fun it is very impressive what can be accomplished.
-</description>
+      <description> Type Description Engine Unity Timeline 3 days </description>
     </item>
     <item>
       <title>About me</title>

@@ -1,5 +1,5 @@
 ---
-title: 'Cooking Grandma'
+title: 'Cooking Grandma 👵'
 date: 2025-03-26T15:31:00+01:00
 draft: false
 hidden: false
@@ -22,6 +22,7 @@ showHeadingAnchors: true
 | **Engine**    | Unity       |
 | **Timeline**  | 3 days      |
 
+<!--more-->
 Cooking Grandma is a mutiple award winning Game Jam hosted by The Game Assembly with the theme of "Combination". I can hands down say that the work on Cooking Grandma was the most fun I have had with a project durring the stint at TGA. 
 
 In just a couple of days the teamwork, creativity, and laughs really carried this project through the door. With no time to say no and just have fun it is very impressive what can be accomplished. 
