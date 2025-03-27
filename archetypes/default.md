@@ -6,7 +6,7 @@ hidden: false
 externalURL: false
 showDate: true
 showModDate: true
-showReadingTime: true
+showReadingTime: false
 showTags: true
 showPagination: true
 invertPagination: true
