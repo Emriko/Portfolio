@@ -35,5 +35,5 @@ I would encourage you to download the game and try it out if you have the time!
 | [**William Arnber** ](https://williamarnberg.com/)        | Programming       |
 | [**Gustaf Engsner** ](https://gengsner.github.io/)        | Programming       |
 | **Emrik Åberg Wenthzel**                                  | Programming       |
-| **Carl Anderson**                                         | Graphics and vfx  |
-| **Hampus Helin**                                          | Graphics and vfx  |
+| [**Carl Anderson**](https://carlandersson.artstation.com/)| Graphics and vfx  |
+| [**Hampus Helin**](https://hampushelin.artstation.com/)   | Graphics and vfx  |
