@@ -5,7 +5,7 @@ draft: false
 showHeadingAnchors: false
 ---
 
-Welcome, I'm a video game programmer with focus on Graphics and gameplay programming. 
+Welcome, I'm a video game programmer with focus on Graphics and Gameplay programming. 
 
 Here you can see some of my project that I have work on and developed. 
 I am looking for an internship starting August 2025 

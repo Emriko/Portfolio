@@ -11,3 +11,5 @@ Ever since I was young I have been very technical and loved to solve problems. U
 After 3 years of computer science courses and a year long stint at Arlanda airpot I found myself at The Game Assembly, where I truly found my programming passion working with what i love.
 
 In my freetime you will obviously be able to find me playing videogames, but beyond that my main hobby is indoors rockclimbing. (hopefully soon to be outdoors as well)
+
+testing text
