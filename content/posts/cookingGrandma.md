@@ -21,11 +21,12 @@ showHeadingAnchors: true
 | -----------   | ----------- |
 | **Engine**    | Unity       |
 | **Timeline**  | 3 days      |
+| **Download**  | [Link](https://drive.google.com/drive/folders/1i-0AoKtyJf2m1mrdqfNXbBRpALRGqn_H?usp=drive_link)    |
 
 <!--more-->
-Cooking Grandma is a mutiple award winning Game Jam hosted by The Game Assembly with the theme of "Combination". I can hands down say that the work on Cooking Grandma was the most fun I have had with a project durring the stint at TGA. 
+Cooking Grandma is a multiple award-winning Game Jam hosted by The Game Assembly with the theme of “Combination.” I can hands down say that the work on Cooking Grandma was the most fun I have had with a project during my stint at TGA.
 
-In just a couple of days the teamwork, creativity, and laughs really carried this project through the door. With no time to say no and just have fun it is very impressive what can be accomplished. 
+In just a couple of days, the teamwork, creativity, and laughs really carried this project through the door. With no time to say no and just having fun, it is very impressive what can be accomplished.
 
 I would encourage you to download the game and try it out if you have the time!
 
