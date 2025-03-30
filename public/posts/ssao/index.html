@@ -324,7 +324,7 @@
  </a>
   
 </h1>
-<p>The purpose of SSAO is to determine how occluded a pixel is. To do this, we need some knowledge about the rest of the 3D scene. In our case, we take the Z-Buffer from the camera&rsquo;s perspective. This corresponds to the depth buffer.</p>
+<p>The purpose of SSAO is to determine how occluded a pixel is. To do this, we need some knowledge about the rest of the 3D scene. In our case, we take the Z-Buffer from the camera&rsquo;s perspective. In this case, we save the perspective Z value in a texture before our SSAO pass. This corresponds to the depth.</p>
 <p>When determining a pixel&rsquo;s occlusion, some precomputed random directions are used as an offset from the pixel&rsquo;s world position, which is taken from the geometry buffer. This new position is projected into view-space to get its z-depth. With the found value, a comparison is made to the original z-depth of our pixel to determine if it&rsquo;s closer to the camera. If it is, that pixel is occluded by that position, contributing to the occlusion factor. This is then repeated a handful of times to get an estimate of the amount of occlusion the pixel would have</p>
 <figure class="alignright"><img src="/SSAOIllustation.png"
     alt="Figure showing occluded projected possitions in a sphere"><figcaption>
@@ -332,7 +332,7 @@
     </figcaption>
 </figure>
 <p>However, a pixel cannot be occluded by a position behind its own surface. To improve the efficiency of a sample, instead of using a sphere, we ensure the position is aligned with the pixel&rsquo;s surface normal (see figure below).</p>
-<p>To achieve this, we take the surface normal of the pixel and create a valid TBN matrix for its rotation space. This process is very uniform, so noise may be used to introduce variability, and used to rotate the TBN matrix tto another valid one, resulting in less uniformity by having varied matrices.</p>
+<p>To achieve this, we take the surface normal of the pixel and create a valid TBN matrix for its rotation space. A TBN matrix (Tangent, Bitangent, Normal) is used to map the random sample directions into the correct orientation in world space based on the pixel&rsquo;s normal vector. This process is very uniform, so noise may be used to introduce variability, and used to rotate the TBN matrix into another valid one, resulting in less uniformity by having varied matrices.</p>
 <figure class="alignright"><img src="/ssao_hemisphere.png"
     alt="Figure showing hemisphere"><figcaption>
       <p>Figure showing hemisphere</p>
@@ -350,7 +350,7 @@
  </a>
   
 </h1>
-<p>Following, a comparison  image with and without the effect can be seen. The results act in a way to adding relation to each scene object and a level of depth to their surrounding backgrounds.</p>
+<p>Following, a comparison image with and without the effect can be seen. The results act in a way to adding relation to each scene object and a level of depth to their surrounding backgrounds. In the comparison image, the effect of SSAO adds realistic shadows and depth to the scene, making the objects feel more grounded in the environment.</p>
 <figure class="alignright"><img src="/slideSSAO.gif">
 </figure>
 
