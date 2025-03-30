@@ -46,7 +46,7 @@ To achieve this, we take the surface normal of the pixel and create a valid TBN 
 
 # Results
 
-Following, a comparisson image with and without the effect can be seen. The results act in a way to adding relation to each scene object and a level of depth to their sorrounding backgrounds.
+Following, a comparison  image with and without the effect can be seen. The results act in a way to adding relation to each scene object and a level of depth to their surrounding backgrounds.
 
 {{% figure class="alignright" src="/slideSSAO.gif#floatleft"  %}}
 
