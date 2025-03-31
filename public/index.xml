@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Emrik Åberg Wenthzel - Game Programmer</title>
-    <link>/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on Emrik Åberg Wenthzel - Game Programmer</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Mar 2025 15:32:46 +0100</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compute Shader particle system with Depth collission</title>
-      <link>/posts/particlesystem/</link>
+      <link>//localhost:1313/posts/particlesystem/</link>
       <pubDate>Wed, 26 Mar 2025 15:32:46 +0100</pubDate>
-      <guid>/posts/particlesystem/</guid>
+      <guid>//localhost:1313/posts/particlesystem/</guid>
       <description> Type Description Engine Penugine Timeline ~8 weeks 50% </description>
     </item>
     <item>
       <title>Screen Space Ambient Occlusion</title>
-      <link>/posts/ssao/</link>
+      <link>//localhost:1313/posts/ssao/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:50 +0100</pubDate>
-      <guid>/posts/ssao/</guid>
+      <guid>//localhost:1313/posts/ssao/</guid>
       <description> Type Description Engine Penugine Timeline ~1-2 weeks 50% </description>
     </item>
     <item>
       <title>Cooking Grandma 👵</title>
-      <link>/posts/cookinggrandma/</link>
+      <link>//localhost:1313/posts/cookinggrandma/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
-      <guid>/posts/cookinggrandma/</guid>
+      <guid>//localhost:1313/posts/cookinggrandma/</guid>
       <description> Type Description Engine Unity Timeline 3 days Download Link </description>
     </item>
     <item>
       <title>About me</title>
-      <link>/about/</link>
+      <link>//localhost:1313/about/</link>
       <pubDate>Wed, 26 Mar 2025 14:10:46 +0100</pubDate>
-      <guid>/about/</guid>
+      <guid>//localhost:1313/about/</guid>
       <description>Gameplay and Graphics programmer
 Ever since I was young I have been very technical and loved to solve problems. Usually starting with the most intuitive paths and love to try differnet approaches until the pieces eventualyl fall into place.
 After 3 years of computer science courses and a year long stint at Arlanda airpot I found myself at The Game Assembly, where I truly found my programming passion working with what i love.

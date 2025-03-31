@@ -24,22 +24,22 @@ showHeadingAnchors: true
 
 
 <video width="800" height="450" controls>
-  <source src="/depthBufferExample.mp4" type="video/mp4">
+  <source src="/Portfolio/depthBufferExample.mp4" type="video/mp4">
 </video>
 
 <video width="800" height="450" controls>
-  <source src="/minSpeedEffect.mp4" type="video/mp4">
+  <source src="/Portfolio/minSpeedEffect.mp4" type="video/mp4">
 </video>
 
 <video width="800" height="450" controls>
-  <source src="/meshInit.mp4" type="video/mp4">
+  <source src="/Portfolio/meshInit.mp4" type="video/mp4">
 </video>
 
 <video width="800" height="450" controls>
-  <source src="/multipleMeshes.mp4" type="video/mp4">
+  <source src="/Portfolio/multipleMeshes.mp4" type="video/mp4">
 </video>
 
 <video width="800" height="450" controls>
-  <source src="/needVisuals.mp4" type="video/mp4">
+  <source src="/Portfolio/needVisuals.mp4" type="video/mp4">
 </video>
 <!--more-->
