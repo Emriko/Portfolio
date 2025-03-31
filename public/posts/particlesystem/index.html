@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8">
   <meta http-equiv="content-language" content="en-us" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,23 +17,26 @@
   <meta name="description" content="A Hugo Theme" />
   
   
-  <link rel="canonical" href="//localhost:1313/posts/particlesystem/" />
+  <link rel="canonical" href="/posts/particlesystem/" />
 
   
 
+
+
   
     
-        <link rel="stylesheet" href="/css/theme.css">
-    
+  
+
   
     
-        <link rel="stylesheet" href="/css/main.css">
-    
+  
+
   
     
-        <link rel="stylesheet" href="/css/custom.css">
-    
   
+
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9e645ac00afea3ed21f2052b5e204202d54831205dfc6a247944f65820dc2fffd9810f10a7fdae5112fd7505fd5374f3ec527318d9b05c9611893881bd4e9549.css" integrity="sha512-nmRawAr&#43;o&#43;0h8gUrXiBCAtVIMSBd/GokeUT2WCDcL//ZgQ8Qp/2uURL9dQX9U3Tz7FJzGNmwXJYRiTiBvU6VSQ==" />
 
 
 
@@ -45,7 +48,7 @@
     <link rel="manifest" href="/site.webmanifest" />
   
 
-  <meta property="og:url" content="//localhost:1313/posts/particlesystem/">
+  <meta property="og:url" content="/posts/particlesystem/">
   <meta property="og:site_name" content="Emrik Åberg Wenthzel - Game Programmer">
   <meta property="og:title" content="Compute Shader particle system with Depth collission">
   <meta property="og:description" content="Type Description Engine Penugine Timeline ~8 weeks 50% Your browser does not support the video tag.">
@@ -76,18 +79,23 @@
 
   
   
-
-
-  
-  
-  
-  
   
 
   
   
+
+
+
   
-    <link rel="preload" href="//localhost:1313/fonts/Ubuntu-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  
+  
+  
+  
+
+  
+  
+  
+    <link rel="preload" href="/fonts/Ubuntu-Regular.woff2" as="font" type="font/woff2" crossorigin>
   
 
   
@@ -150,7 +158,7 @@
   </nav>
     <div class="side-menu">
     
-<div id="search-container" data-url="//localhost:1313/">
+<div id="search-container" data-url="/">
   <div class="search">
     <div class="panel">
       <form>
@@ -290,6 +298,30 @@
 
 
 
+  <div class="toc">
+    <details >
+      <summary accesskey="c" title="(Alt+C)">
+        Table of Contents
+      </summary>
+      <div class="toc-innr">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-this-is">What this is</a></li>
+    <li><a href="#implementation">Implementation</a>
+      <ul>
+        <li><a href="#shader-loading-and-buffer-creation">Shader loading and buffer creation</a></li>
+      </ul>
+    </li>
+    <li><a href="#mesh-initialization">Mesh initialization</a></li>
+    <li><a href="#shaders">Shaders</a></li>
+    <li><a href="#depth-collission">Depth collission</a></li>
+    <li><a href="#areas-of-improvement">Areas of improvement</a></li>
+  </ul>
+</nav>
+      </div>
+    </details>
+  </div>
+  
 
 
 
@@ -317,7 +349,7 @@
     Your browser does not support the video tag.
 </video>
 
-<h1 id="what-this-is">
+<h2 id="what-this-is">
   What this is
   
   <a hidden class="anchor" href="#what-this-is">
@@ -327,11 +359,11 @@
 
  </a>
   
-</h1>
+</h2>
 <p>This is a demonstration and explanation of a particle system designed as a tool for designers and procedural artists to create captivating effects for our game projects. While the primary goal was to develop this tool, a significant focus was also placed on becoming comfortable with compute shaders and techniques suited for this task.</p>
 <p>With compute shaders playing an increasingly important role in offloading CPU computation and enabling effects at a scale that would be impractical with traditional CPU processing, befriending them felt core to my skill set</p>
 
-<h1 id="implementation">
+<h2 id="implementation">
   Implementation
   
   <a hidden class="anchor" href="#implementation">
@@ -341,7 +373,19 @@
 
  </a>
   
-</h1>
+</h2>
+
+<h3 id="shader-loading-and-buffer-creation">
+  Shader loading and buffer creation
+  
+  <a hidden class="anchor" href="#shader-loading-and-buffer-creation">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+
+ </a>
+  
+</h3>
 <p>Start by loading our precompiled shaderobject.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> DX11<span style="color:#f92672">::</span><span style="color:#a6e22e">LoadComputeShader</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> aPath, ID3D11ComputeShader<span style="color:#f92672">**</span> aComputeShader)
 </span></span><span style="display:flex;"><span>{
@@ -371,7 +415,19 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">float</span> lifetime <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.f</span>;
 </span></span><span style="display:flex;"><span>	Vector3f velocity <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>};
 </span></span><span style="display:flex;"><span>};
-</span></span></code></pre></div><p>For the mesh based setup, the data is as folliwng.</p>
+</span></span></code></pre></div>
+<h2 id="mesh-initialization">
+  Mesh initialization
+  
+  <a hidden class="anchor" href="#mesh-initialization">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+
+ </a>
+  
+</h2>
+<p>For the mesh based setup, the data is as folliwng.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> Particle
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>	Vector4f position <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>};
@@ -388,7 +444,7 @@
     <source src="../../meshInit.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-<p>Where the start positions is the vertex position of the mesh. vColor is the vertex color if the model supports it, and bool data is. The bools are represented by unsigned integers because floats are 4 bytes in hlsl while in c++ they are 1 byte. Prefeably this should be wrapped in a way where this is only done when moving the data to the GPU to remove the possibility of user error. However the only steps where this data is used is durring the inital setup, and in the hlsl code itself. So user error ought not to occur.</p>
+<p>The start positions is the vertex position of the mesh. vColor is the vertex color if the model supports it, and bool data is. The bools are represented by unsigned integers because floats are 4 bytes in hlsl while in c++ they are 1 byte. Prefeably this should be wrapped in a way where this is only done when moving the data to the GPU to remove the possibility of user error. However the only steps where this data is used is durring the inital setup, and in the hlsl code itself. So user error ought not to occur.</p>
 <p>The following video provides an example of multiple meshes</p>
 
 <video  loop width="800" height="450" controls>
@@ -407,9 +463,7 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> false;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The dispatch and render passes are the following</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>myGbuffer.<span style="color:#a6e22e">CSSetAsResourceOnSlot</span>(GBuffer<span style="color:#f92672">::</span>GBufferTexture<span style="color:#f92672">::</span>ScreenPos, <span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>myGbuffer.<span style="color:#a6e22e">CSSetAsResourceOnSlot</span>(GBuffer<span style="color:#f92672">::</span>GBufferTexture<span style="color:#f92672">::</span>Normal, <span style="color:#ae81ff">2</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">RunComputeShader</span>(myComputeShader.<span style="color:#a6e22e">Get</span>(), <span style="color:#ae81ff">0</span>, nullptr, nullptr, nullptr, <span style="color:#ae81ff">0</span>, myParticleUAV.<span style="color:#a6e22e">Get</span>(), NUM_PARTICLE <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">RunComputeShader</span>(myComputeShader.<span style="color:#a6e22e">Get</span>(), <span style="color:#ae81ff">0</span>, nullptr, nullptr, nullptr, <span style="color:#ae81ff">0</span>, myParticleUAV.<span style="color:#a6e22e">Get</span>(), NUM_PARTICLE <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>myPreprocessedFrame.<span style="color:#a6e22e">SetAsActiveTarget</span>(DX11<span style="color:#f92672">::</span>DepthBuffer);
 </span></span><span style="display:flex;"><span>myTentativeState.blendState <span style="color:#f92672">=</span> BlendState<span style="color:#f92672">::</span>AlphaBlend;
@@ -418,9 +472,21 @@
 </span></span><span style="display:flex;"><span>DX11<span style="color:#f92672">::</span>Context<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">PSSetConstantBuffers</span>(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">1</span>, myParticleColorBuffer.<span style="color:#a6e22e">GetAddressOf</span>());
 </span></span><span style="display:flex;"><span>myParticleShader<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">Render</span>(t);
 </span></span></code></pre></div><p>This is all that has to be done on the cpu, myParticleShader holds the meshes for the particles themselves, in this case it is just represented by a diamond to give some volume while also keeping the geometry minimal.</p>
+
+<h2 id="shaders">
+  Shaders
+  
+  <a hidden class="anchor" href="#shaders">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+
+ </a>
+  
+</h2>
 <p>The following is a simple emmiter using pseudo random algorithms seeding with particle id (this will make a repeating pattern, however, with the amount of partilces this is negligible)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>[<span style="color:#a6e22e">numthreads</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)]
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(uint3 DTid : SV_DispatchThreadID)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>[<span style="color:#a6e22e">numthreads</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> main(<span style="color:#66d9ef">uint3</span> DTid <span style="color:#f92672">:</span> <span style="color:#a6e22e">SV_DispatchThreadID</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    BufferInOut[DTid.x].lifetime.x <span style="color:#f92672">+=</span> Timings.y;
 </span></span><span style="display:flex;"><span>    BufferInOut[DTid.x].velocity.y <span style="color:#f92672">-=</span> <span style="color:#ae81ff">0.00009f</span>;
@@ -428,8 +494,8 @@
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        BufferInOut[DTid.x].lifetime.x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.f</span>;
 </span></span><span style="display:flex;"><span>        BufferInOut[DTid.x].velocity.xyz <span style="color:#f92672">=</span> up.xyz;
-</span></span><span style="display:flex;"><span>        BufferInOut[DTid.x].velocity.xyz <span style="color:#f92672">+=</span> forward.xyz <span style="color:#f92672">*</span> (<span style="color:#a6e22e">rand_xorshift</span>(DTid.x) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2.0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">4294967296.0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.f</span>);
-</span></span><span style="display:flex;"><span>        BufferInOut[DTid.x].velocity.xyz <span style="color:#f92672">+=</span> right.xyz <span style="color:#f92672">*</span> (<span style="color:#a6e22e">rand_lcg</span>(DTid.x) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2.0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">4294967296.0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.f</span>);
+</span></span><span style="display:flex;"><span>        BufferInOut[DTid.x].velocity.xyz <span style="color:#f92672">+=</span> forward.xyz <span style="color:#f92672">*</span> (rand_xorshift(DTid.x) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2.0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">4294967296.0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.f</span>);
+</span></span><span style="display:flex;"><span>        BufferInOut[DTid.x].velocity.xyz <span style="color:#f92672">+=</span> right.xyz <span style="color:#f92672">*</span> (rand_lcg(DTid.x) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">2.0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">4294967296.0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.f</span>);
 </span></span><span style="display:flex;"><span>        BufferInOut[DTid.x].position.xyz <span style="color:#f92672">=</span> forcePosition;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    
@@ -442,29 +508,55 @@
     Your browser does not support the video tag.
 </video></p>
 <p>This effect uses the following vertex shader, with ObjectToWorld as an extra transform to rotate and scale the particles if so desired.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>ParticlePSInput <span style="color:#a6e22e">main</span>(ParticleVSInput input)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>ParticlePSInput main(ParticleVSInput input)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    ParticlePSInput output;  
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    float4 particlePos <span style="color:#f92672">=</span> Buffer0[input.id].position;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float4</span> particlePos <span style="color:#f92672">=</span> Buffer0[input.id].position;
 </span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    float4x4 transform <span style="color:#f92672">=</span> <span style="color:#a6e22e">float4x4</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float4x4</span> transform <span style="color:#f92672">=</span> <span style="color:#66d9ef">float4x4</span>(
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, Buffer0[input.id].position.x,
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, Buffer0[input.id].position.y,
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, Buffer0[input.id].position.z,
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>    float4x4 toNewObject <span style="color:#f92672">=</span> <span style="color:#a6e22e">mul</span>(transform, ObjectToWorld);
-</span></span><span style="display:flex;"><span>    float4 vertexWorldPos <span style="color:#f92672">=</span> <span style="color:#a6e22e">mul</span>(transform, input.position);
-</span></span><span style="display:flex;"><span>    float4 vertexViewPos <span style="color:#f92672">=</span> <span style="color:#a6e22e">mul</span>(WorldToCamera, vertexWorldPos);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float4x4</span> toNewObject <span style="color:#f92672">=</span> mul(transform, ObjectToWorld);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float4</span> vertexWorldPos <span style="color:#f92672">=</span> mul(transform, input.position);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float4</span> vertexViewPos <span style="color:#f92672">=</span> mul(WorldToCamera, vertexWorldPos);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    output.worldPosition <span style="color:#f92672">=</span> vertexWorldPos;
-</span></span><span style="display:flex;"><span>    output.position <span style="color:#f92672">=</span> <span style="color:#a6e22e">mul</span>(CameraToProjection, vertexViewPos);
+</span></span><span style="display:flex;"><span>    output.position <span style="color:#f92672">=</span> mul(CameraToProjection, vertexViewPos);
 </span></span><span style="display:flex;"><span>    output.vertexColor0 <span style="color:#f92672">=</span> Buffer0[input.id].vColor;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> output;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>As observed above, the particles just fall through the ground making otherly from the 3D scene. This issue is solved with depth collission.</p>
+</span></span></code></pre></div>
+<h2 id="depth-collission">
+  Depth collission
+  
+  <a hidden class="anchor" href="#depth-collission">
 
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+
+ </a>
+  
+</h2>
+<p>As observed above, the particles just fall through the ground making otherly from the 3D scene. This issue is solved with depth collission.</p>
+<p>To achieve this, we need to project the particles to screen position to be able to sample the occupying pixels depth and normal. The normal will be used uppon collission for impact velocity calculations.</p>
+<p>In the graphics pipline I dessgined for our engine, we have the data we need saved in the Geometry buffers. We bind these before the compute shader pass.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>myGbuffer.<span style="color:#a6e22e">CSSetAsResourceOnSlot</span>(GBuffer<span style="color:#f92672">::</span>GBufferTexture<span style="color:#f92672">::</span>ScreenPos, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>myGbuffer.<span style="color:#a6e22e">CSSetAsResourceOnSlot</span>(GBuffer<span style="color:#f92672">::</span>GBufferTexture<span style="color:#f92672">::</span>Normal, <span style="color:#ae81ff">2</span>);
+</span></span></code></pre></div><p>In the compute shader we convert the world possition to the following spaces we will need. View position for the Z-Depth from our camper, and projected for the screen space cordinates to sample the pixels depth and normals.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>    <span style="color:#66d9ef">float4x4</span> transform <span style="color:#f92672">=</span> <span style="color:#66d9ef">float4x4</span>(
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, BufferInOut[DTid.x].position.x,
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, BufferInOut[DTid.x].position.y,
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, BufferInOut[DTid.x].position.z,
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float4</span> vertexWorldPos <span style="color:#f92672">=</span> mul(transform, <span style="color:#66d9ef">float4</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float4</span> vertexViewPos <span style="color:#f92672">=</span> mul(WorldToCamera, vertexWorldPos);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float4</span> projected <span style="color:#f92672">=</span> mul(CameraToProjection, vertexViewPos);
+</span></span></code></pre></div>
 <video  loop width="800" height="450" controls>
     <source src="../../depthBufferExample.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -476,7 +568,7 @@
     Your browser does not support the video tag.
 </video>
 
-<h1 id="areas-of-improvement">
+<h2 id="areas-of-improvement">
   Areas of improvement
   
   <a hidden class="anchor" href="#areas-of-improvement">
@@ -486,8 +578,9 @@
 
  </a>
   
-</h1>
-<p>Some clear stretch goals I peronally had were to implement motion blur to this</p>
+</h2>
+<p>Strech goals I peronally had were to implement motion blur to the particles, simulating higher velocities, giving the effect more life.</p>
+<p>A system like this is very flexible. One can always add new features to be able to achieve new implementatoins, so making this system more modular for ingame use and providing more features to customize the effects producsed are high on the priority list as well.</p>
 
 
 
@@ -541,14 +634,16 @@
 
   
     
-        <script src="/js/theme.js"></script>
+        
+        <script defer type="text/javascript" src="/js/theme.min.eaccfb587dc18aa6c89ddcfe908efce320a265a23826cb3af2032a3f425a36f9b12c233ec2743b2c1017217c7699a7cc7619483ea2257f88b2b63b7b51bbaaa8.js" integrity="sha512-6sz7WH3BiqbIndz&#43;kI784yCiZaI4Jss68gMqP0JaNvmxLCM&#43;wnQ7LBAXIXx2mafMdhlIPqIlf4iytjt7UbuqqA=="> </script>
       
     
   
 
   
     
-        <script src="/js/codecopy.js"></script>
+        
+        <script defer type="text/javascript" src="/js/codecopy.min.6319d0ad3eae498a0591b4ec1d52cc0156f5c3cb95390089d7d0ac7fe6dfb183161c14f935d25b5ad896840e2a9d6a23f555a7976954d0a263c24a11272aa747.js" integrity="sha512-YxnQrT6uSYoFkbTsHVLMAVb1w8uVOQCJ19Csf&#43;bfsYMWHBT5NdJbWtiWhA4qnWoj9VWnl2lU0KJjwkoRJyqnRw=="> </script>
       
     
   

@@ -26,12 +26,14 @@ showHeadingAnchors: true
 {{< video src="../../minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
-# What this is
+## What this is
 This is a demonstration and explanation of a particle system designed as a tool for designers and procedural artists to create captivating effects for our game projects. While the primary goal was to develop this tool, a significant focus was also placed on becoming comfortable with compute shaders and techniques suited for this task.
 
 With compute shaders playing an increasingly important role in offloading CPU computation and enabling effects at a scale that would be impractical with traditional CPU processing, befriending them felt core to my skill set
 
-# Implementation
+## Implementation
+
+### Shader loading and buffer creation
 
 Start by loading our precompiled shaderobject.
 
@@ -72,6 +74,8 @@ struct Particle
 };
 ```
 
+## Mesh initialization
+
 For the mesh based setup, the data is as folliwng.
 ```c
 struct Particle
@@ -90,7 +94,8 @@ With accompanning example
 {{< video src="../../meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
-Where the start positions is the vertex position of the mesh. vColor is the vertex color if the model supports it, and bool data is. The bools are represented by unsigned integers because floats are 4 bytes in hlsl while in c++ they are 1 byte. Prefeably this should be wrapped in a way where this is only done when moving the data to the GPU to remove the possibility of user error. However the only steps where this data is used is durring the inital setup, and in the hlsl code itself. So user error ought not to occur.
+The start positions is the vertex position of the mesh. vColor is the vertex color if the model supports it, and bool data is. The bools are represented by unsigned integers because floats are 4 bytes in hlsl while in c++ they are 1 byte. Prefeably this should be wrapped in a way where this is only done when moving the data to the GPU to remove the possibility of user error. However the only steps where this data is used is durring the inital setup, and in the hlsl code itself. So user error ought not to occur.
+
 
 The following video provides an example of multiple meshes
 
@@ -113,8 +118,6 @@ if (FAILED(result))
 
 The dispatch and render passes are the following
 ```c
-myGbuffer.CSSetAsResourceOnSlot(GBuffer::GBufferTexture::ScreenPos, 1);
-myGbuffer.CSSetAsResourceOnSlot(GBuffer::GBufferTexture::Normal, 2);
 RunComputeShader(myComputeShader.Get(), 0, nullptr, nullptr, nullptr, 0, myParticleUAV.Get(), NUM_PARTICLE / 10, 10, 1);
 
 myPreprocessedFrame.SetAsActiveTarget(DX11::DepthBuffer);
@@ -128,8 +131,10 @@ myParticleShader->Render(t);
 This is all that has to be done on the cpu, myParticleShader holds the meshes for the particles themselves, in this case it is just represented by a diamond to give some volume while also keeping the geometry minimal.
 
 
+## Shaders
+
 The following is a simple emmiter using pseudo random algorithms seeding with particle id (this will make a repeating pattern, however, with the amount of partilces this is negligible)
-```c
+```hlsl
 [numthreads(1, 1, 1)]
 void main(uint3 DTid : SV_DispatchThreadID)
 {
@@ -153,7 +158,7 @@ This produces the following effect.
 
 
 This effect uses the following vertex shader, with ObjectToWorld as an extra transform to rotate and scale the particles if so desired.
-```c
+```hlsl
 ParticlePSInput main(ParticleVSInput input)
 {
     ParticlePSInput output;  
@@ -176,8 +181,32 @@ ParticlePSInput main(ParticleVSInput input)
     return output;
 }
 ```
-
+## Depth collission
 As observed above, the particles just fall through the ground making otherly from the 3D scene. This issue is solved with depth collission.
+
+To achieve this, we need to project the particles to screen position to be able to sample the occupying pixels depth and normal. The normal will be used uppon collission for impact velocity calculations.
+
+In the graphics pipline I dessgined for our engine, we have the data we need saved in the Geometry buffers. We bind these before the compute shader pass.
+```c
+myGbuffer.CSSetAsResourceOnSlot(GBuffer::GBufferTexture::ScreenPos, 1);
+myGbuffer.CSSetAsResourceOnSlot(GBuffer::GBufferTexture::Normal, 2);
+```
+
+In the compute shader we convert the world possition to the following spaces we will need. View position for the Z-Depth from our camper, and projected for the screen space cordinates to sample the pixels depth and normals.
+
+```hlsl
+    float4x4 transform = float4x4(
+1, 0, 0, BufferInOut[DTid.x].position.x,
+0, 1, 0, BufferInOut[DTid.x].position.y,
+0, 0, 1, BufferInOut[DTid.x].position.z,
+0, 0, 0, 1);
+
+float4 vertexWorldPos = mul(transform, float4(0, 0, 0, 1));
+float4 vertexViewPos = mul(WorldToCamera, vertexWorldPos);
+float4 projected = mul(CameraToProjection, vertexViewPos);
+```
+
+
 
 {{< video src="../../depthBufferExample.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
@@ -189,6 +218,8 @@ A clear flaw with this technique is if you do not see the object. It does not pr
 
 
 
-# Areas of improvement
+## Areas of improvement
 
-Some clear stretch goals I peronally had were to implement motion blur to this
+Strech goals I peronally had were to implement motion blur to the particles, simulating higher velocities, giving the effect more life. 
+
+A system like this is very flexible. One can always add new features to be able to achieve new implementatoins, so making this system more modular for ingame use and providing more features to customize the effects producsed are high on the priority list as well.
