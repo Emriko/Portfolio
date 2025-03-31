@@ -133,7 +133,7 @@ This is all that needs to be done on the CPU. myParticleShader holds the meshes 
 
 ## Shaders
 
-The following is a simple emmiter using pseudo random algorithms seeding with particle id (this will make a repeating pattern, however, with the amount of partilces this is negligible)
+The following is a simple emitter that uses pseudo-random algorithms seeded with the particle ID. This will create a repeating pattern, however, given the number of particles, this is negligible.
 ```hlsl
 [numthreads(1, 1, 1)]
 void main(uint3 DTid : SV_DispatchThreadID)
@@ -230,7 +230,7 @@ if (vertexViewPos.z < depth + radius && vertexViewPos.z > depth - radius)
 
 
 This produces the following effect.
-{{< video src="../../depthGenerator.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../depthGeneratorNew.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 

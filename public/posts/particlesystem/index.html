@@ -476,7 +476,7 @@
  </a>
   
 </h2>
-<p>The following is a simple emmiter using pseudo random algorithms seeding with particle id (this will make a repeating pattern, however, with the amount of partilces this is negligible)</p>
+<p>The following is a simple emitter that uses pseudo-random algorithms seeded with the particle ID. This will create a repeating pattern, however, given the number of particles, this is negligible.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>[<span style="color:#a6e22e">numthreads</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> main(<span style="color:#66d9ef">uint3</span> DTid <span style="color:#f92672">:</span> <span style="color:#a6e22e">SV_DispatchThreadID</span>)
 </span></span><span style="display:flex;"><span>{
@@ -566,7 +566,7 @@
 </span></span></code></pre></div><p>This produces the following effect.
 
 <video  loop width="800" height="450" controls>
-    <source src="../../depthGenerator.mp4" type="video/mp4">
+    <source src="../../depthGeneratorNew.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video></p>
 <p>A clear flaw with this technique is if you do not see the object. It does not provide any data to the depth buffer and the particles do not collise. The following video is an example of this issue.</p>
