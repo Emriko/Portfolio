@@ -23,7 +23,7 @@ showHeadingAnchors: true
 | **Timeline**  | ~8 weeks 50%  | 
 
 
-{{< video src="../Portfolio/minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
 ## What this is
@@ -91,7 +91,7 @@ struct Particle
 ```
 With an accompanying example
 
-{{< video src="/Portfolio/meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 The start position is the vertex position of the mesh. vColor is the vertex color if the model supports it, and the boolean data is represented by unsigned integers. This is because floats are 4 bytes in HLSL, whereas in C++, they are 1 byte. Preferably, this should be wrapped in a way that ensures conversion only happens when moving the data to the GPU, minimizing the possibility of user error. However, the only steps where this data is used are during the initial setup and in the HLSL code itself, so user error should not occur
@@ -99,7 +99,7 @@ The start position is the vertex position of the mesh. vColor is the vertex colo
 
 The following video provides an example for multiple meshes
 
-{{< video src="/Portfolio/multipleMeshes.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/Portfolio/multipleMeshes.mp4/" autoplay="false" loop="true" width="800" height="450" >}}  
 
 For the buffer we created, we create an unordered access view. This allows our compute shaders to read from and write to the buffer. We also create a shader resource view so that our non-compute shaders can read the data as intended. Our vertex shader will use this to output the position of each mesh representing a particle
 

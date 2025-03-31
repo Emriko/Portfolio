@@ -54,5 +54,10 @@ buildFuture = true
   [[params.plugins.css]]
   URL = "css/custom.css"
 
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+
   [security]
   enableInlineShortcodes = true
