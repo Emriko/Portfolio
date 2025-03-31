@@ -23,7 +23,7 @@ showHeadingAnchors: true
 | **Timeline**  | ~8 weeks 50%  | 
 
 
-{{< video src="../../minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/minSpeedEffect.mp4/" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
 ## What this is
@@ -91,7 +91,7 @@ struct Particle
 ```
 With an accompanying example
 
-{{< video src="../../meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/meshInit.mp4/" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 The start position is the vertex position of the mesh. vColor is the vertex color if the model supports it, and the boolean data is represented by unsigned integers. This is because floats are 4 bytes in HLSL, whereas in C++, they are 1 byte. Preferably, this should be wrapped in a way that ensures conversion only happens when moving the data to the GPU, minimizing the possibility of user error. However, the only steps where this data is used are during the initial setup and in the HLSL code itself, so user error should not occur
@@ -99,7 +99,7 @@ The start position is the vertex position of the mesh. vColor is the vertex colo
 
 The following video provides an example for multiple meshes
 
-{{< video src="../../multipleMeshes.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/multipleMeshes.mp4/" autoplay="false" loop="true" width="800" height="450" >}}  
 
 For the buffer we created, we create an unordered access view. This allows our compute shaders to read from and write to the buffer. We also create a shader resource view so that our non-compute shaders can read the data as intended. Our vertex shader will use this to output the position of each mesh representing a particle
 
@@ -154,7 +154,7 @@ void main(uint3 DTid : SV_DispatchThreadID)
 ```
 
 This produces the following effect.
-{{< video src="../../emitterEx.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/emitterEx.mp4/" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 This effect uses the following vertex shader, with ObjectToWorld as an extra transform to rotate and scale the particles if so desired.
@@ -230,13 +230,13 @@ if (vertexViewPos.z < depth + radius && vertexViewPos.z > depth - radius)
 
 
 This produces the following effect.
-{{< video src="../../depthGeneratorNew.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/depthGeneratorNew.mp4/" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 
 A clear flaw with this technique is that if the object is not visible, it does not contribute to the depth buffer, and the particles do not collide. The following video demonstrates this issue.
 
-{{< video src="../../needVisuals.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="/needVisuals.mp4/" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 
