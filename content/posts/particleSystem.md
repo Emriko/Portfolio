@@ -151,6 +151,8 @@ void main(uint3 DTid : SV_DispatchThreadID)
 This produces the following effect.
 {{< video src="emitterEx.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
+
+This effect uses the following vertex shader, with ObjectToWorld as an extra transform to rotate and scale the particles if so desired.
 ```c
 ParticlePSInput main(ParticleVSInput input)
 {
@@ -174,6 +176,8 @@ ParticlePSInput main(ParticleVSInput input)
     return output;
 }
 ```
+
+As observed above, the particles just fall through the ground making them seem 
 
 {{< video src="depthBufferExample.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
