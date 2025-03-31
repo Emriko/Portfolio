@@ -182,17 +182,17 @@ ParticlePSInput main(ParticleVSInput input)
 }
 ```
 ## Depth collission
-As observed above, the particles just fall through the ground making otherly from the 3D scene. This issue is solved with depth collission.
+As observed above, the particles simply fall through the ground, making them appear out of place in the 3D scene. This issue is resolved using depth collision.
 
-To achieve this, we need to project the particles to screen position to be able to sample the occupying pixels depth and normal. The normal will be used uppon collission for impact velocity calculations.
+To achieve this, we need to project the particles onto screen space to sample the depth and normal of the occupying pixels. The normal will be used upon collision for impact velocity calculations.
 
-In the graphics pipline I dessgined for our engine, we have the data we need saved in the Geometry buffers. We bind these before the compute shader pass.
+In the graphics pipeline I designed for our engine, the necessary data is stored in the geometry buffers. We bind these before the compute shader pass
 ```c
 myGbuffer.CSSetAsResourceOnSlot(GBuffer::GBufferTexture::ScreenPos, 1);
 myGbuffer.CSSetAsResourceOnSlot(GBuffer::GBufferTexture::Normal, 2);
 ```
 
-In the compute shader we convert the world possition to the following spaces we will need. View position for the Z-Depth from our camper, and projected for the screen space cordinates to sample the pixels depth and normals.
+In the compute shader, we convert the world position into the necessary coordinate spaces. We use view space for Z-depth from our camera and projected space for screen-space coordinates to sample the pixel depth and normals
 
 ```hlsl
     float4x4 transform = float4x4(
@@ -206,14 +206,14 @@ float4 vertexViewPos = mul(WorldToCamera, vertexWorldPos);
 float4 projected = mul(CameraToProjection, vertexViewPos);
 ```
 
-We then convert the projected values into DirectX3D11 projectio space with the following.
+We then convert the projected values into Direct3D11 projection space using the following method.
 ```hlsl
 projected.xyz /= projected.w;
 projected.xy = (projected.xy + 1) * 0.5f;
 projected.y = 1 - projected.y;
 ```
 
-Next we sample the projected pixel and comapre it to the particles depth. If the particle is whitin a certain range of the projected depth, we do smear collission and add a bit of bounce depending on the velocity and at which angle the collssion happened at.
+Next, we sample the projected pixel and compare it to the particle's depth. If the particle is within a certain range of the projected depth, we apply a smear collision and add a bit of bounce, depending on the velocity and the angle at which the collision occurred.
 
 ```hlsl
 float depth = DepthTexture.SampleLevel(defaultSampler, projected.xy, 0).z;
@@ -234,7 +234,7 @@ This produces the following effect.
 
 
 
-A clear flaw with this technique is if you do not see the object. It does not provide any data to the depth buffer and the particles do not collise. The following video is an example of this issue.
+A clear flaw with this technique is that if the object is not visible, it does not contribute to the depth buffer, and the particles do not collide. The following video demonstrates this issue.
 
 {{< video src="../../needVisuals.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
@@ -242,6 +242,6 @@ A clear flaw with this technique is if you do not see the object. It does not pr
 
 ## Areas of improvement
 
-Strech goals I peronally had were to implement motion blur to the particles, simulating higher velocities, giving the effect more life. 
+Stretch goals I personally had included implementing motion blur for the particles to simulate higher velocities, making the effect feel more dynamic.
 
-A system like this is very flexible. One can always add new features to be able to achieve new implementatoins, so making this system more modular for ingame use and providing more features to customize the effects producsed are high on the priority list as well.
+A system like this is very flexible. New features can always be added to enable different implementations. Making the system more modular for in-game use and providing more customization options for the effects produced are also high on the priority list.

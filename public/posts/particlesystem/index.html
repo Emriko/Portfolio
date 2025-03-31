@@ -533,12 +533,12 @@
  </a>
   
 </h2>
-<p>As observed above, the particles just fall through the ground making otherly from the 3D scene. This issue is solved with depth collission.</p>
-<p>To achieve this, we need to project the particles to screen position to be able to sample the occupying pixels depth and normal. The normal will be used uppon collission for impact velocity calculations.</p>
-<p>In the graphics pipline I dessgined for our engine, we have the data we need saved in the Geometry buffers. We bind these before the compute shader pass.</p>
+<p>As observed above, the particles simply fall through the ground, making them appear out of place in the 3D scene. This issue is resolved using depth collision.</p>
+<p>To achieve this, we need to project the particles onto screen space to sample the depth and normal of the occupying pixels. The normal will be used upon collision for impact velocity calculations.</p>
+<p>In the graphics pipeline I designed for our engine, the necessary data is stored in the geometry buffers. We bind these before the compute shader pass</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>myGbuffer.<span style="color:#a6e22e">CSSetAsResourceOnSlot</span>(GBuffer<span style="color:#f92672">::</span>GBufferTexture<span style="color:#f92672">::</span>ScreenPos, <span style="color:#ae81ff">1</span>);
 </span></span><span style="display:flex;"><span>myGbuffer.<span style="color:#a6e22e">CSSetAsResourceOnSlot</span>(GBuffer<span style="color:#f92672">::</span>GBufferTexture<span style="color:#f92672">::</span>Normal, <span style="color:#ae81ff">2</span>);
-</span></span></code></pre></div><p>In the compute shader we convert the world possition to the following spaces we will need. View position for the Z-Depth from our camper, and projected for the screen space cordinates to sample the pixels depth and normals.</p>
+</span></span></code></pre></div><p>In the compute shader, we convert the world position into the necessary coordinate spaces. We use view space for Z-depth from our camera and projected space for screen-space coordinates to sample the pixel depth and normals</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>    <span style="color:#66d9ef">float4x4</span> transform <span style="color:#f92672">=</span> <span style="color:#66d9ef">float4x4</span>(
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, BufferInOut[DTid.x].position.x,
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, BufferInOut[DTid.x].position.y,
@@ -548,11 +548,11 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">float4</span> vertexWorldPos <span style="color:#f92672">=</span> mul(transform, <span style="color:#66d9ef">float4</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>));
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">float4</span> vertexViewPos <span style="color:#f92672">=</span> mul(WorldToCamera, vertexWorldPos);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">float4</span> projected <span style="color:#f92672">=</span> mul(CameraToProjection, vertexViewPos);
-</span></span></code></pre></div><p>We then convert the projected values into DirectX3D11 projectio space with the following.</p>
+</span></span></code></pre></div><p>We then convert the projected values into Direct3D11 projection space using the following method.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span>projected.xyz <span style="color:#f92672">/=</span> projected.w;
 </span></span><span style="display:flex;"><span>projected.xy <span style="color:#f92672">=</span> (projected.xy <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.5f</span>;
 </span></span><span style="display:flex;"><span>projected.y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> projected.y;
-</span></span></code></pre></div><p>Next we sample the projected pixel and comapre it to the particles depth. If the particle is whitin a certain range of the projected depth, we do smear collission and add a bit of bounce depending on the velocity and at which angle the collssion happened at.</p>
+</span></span></code></pre></div><p>Next, we sample the projected pixel and compare it to the particle&rsquo;s depth. If the particle is within a certain range of the projected depth, we apply a smear collision and add a bit of bounce, depending on the velocity and the angle at which the collision occurred.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> depth <span style="color:#f92672">=</span> DepthTexture.SampleLevel(defaultSampler, projected.xy, <span style="color:#ae81ff">0</span>).z;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (vertexViewPos.z <span style="color:#f92672">&lt;</span> depth <span style="color:#f92672">+</span> radius <span style="color:#f92672">&amp;&amp;</span> vertexViewPos.z <span style="color:#f92672">&gt;</span> depth <span style="color:#f92672">-</span> radius)
 </span></span><span style="display:flex;"><span>{
@@ -569,7 +569,7 @@
     <source src="../../depthGeneratorNew.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video></p>
-<p>A clear flaw with this technique is if you do not see the object. It does not provide any data to the depth buffer and the particles do not collise. The following video is an example of this issue.</p>
+<p>A clear flaw with this technique is that if the object is not visible, it does not contribute to the depth buffer, and the particles do not collide. The following video demonstrates this issue.</p>
 
 <video  loop width="800" height="450" controls>
     <source src="../../needVisuals.mp4" type="video/mp4">
@@ -587,8 +587,8 @@
  </a>
   
 </h2>
-<p>Strech goals I peronally had were to implement motion blur to the particles, simulating higher velocities, giving the effect more life.</p>
-<p>A system like this is very flexible. One can always add new features to be able to achieve new implementatoins, so making this system more modular for ingame use and providing more features to customize the effects producsed are high on the priority list as well.</p>
+<p>Stretch goals I personally had included implementing motion blur for the particles to simulate higher velocities, making the effect feel more dynamic.</p>
+<p>A system like this is very flexible. New features can always be added to enable different implementations. Making the system more modular for in-game use and providing more customization options for the effects produced are also high on the priority list.</p>
 
 
 
