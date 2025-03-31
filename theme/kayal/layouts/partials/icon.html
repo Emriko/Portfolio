@@ -1,6 +1,0 @@
-{{ $icon := resources.Get (print "icons/" . ".svg") }}
-{{ if $icon }}
-    {{ $icon.Content | safeHTML }}
-{{ else }}
-    {{ errorf . "Icon not found!" }}
-{{ end }}
