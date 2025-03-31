@@ -55,7 +55,7 @@ bool DX11::LoadComputeShader(const char* aPath, ID3D11ComputeShader** aComputeSh
 }
 ```
 
-Next the buffer is created, with the data of the particle struct. Amount of particles, and inital data in myParticleData.
+Next the buffer is created with the data of the particle struct, Amount of particles, and inital data in myParticleData.
 ```c
 result = CreateStructuredBuffer(DX11::Device, sizeof(Particle), NUM_PARTICLE, &myParticleData[0], myStructuredBuffer.GetAddressOf());
 if (FAILED(result))
@@ -64,7 +64,7 @@ if (FAILED(result))
 }
 ```
 
-The emmiter setup has particle data like the following.
+The emmiter setup has particle data as the following.
 ```c
 struct Particle
 {
@@ -76,7 +76,7 @@ struct Particle
 
 ## Mesh initialization
 
-For the mesh based setup, the data is as folliwng.
+For the mesh based setup, the data is would be.
 ```c
 struct Particle
 {
@@ -89,19 +89,19 @@ struct Particle
     Vector4<unsigned int> boolData = {0,0,0,0};
 };
 ```
-With accompanning example
+With an accompanying example
 
 {{< video src="../../meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
-The start positions is the vertex position of the mesh. vColor is the vertex color if the model supports it, and bool data is. The bools are represented by unsigned integers because floats are 4 bytes in hlsl while in c++ they are 1 byte. Prefeably this should be wrapped in a way where this is only done when moving the data to the GPU to remove the possibility of user error. However the only steps where this data is used is durring the inital setup, and in the hlsl code itself. So user error ought not to occur.
+The start position is the vertex position of the mesh. vColor is the vertex color if the model supports it, and the boolean data is represented by unsigned integers. This is because floats are 4 bytes in HLSL, whereas in C++, they are 1 byte. Preferably, this should be wrapped in a way that ensures conversion only happens when moving the data to the GPU, minimizing the possibility of user error. However, the only steps where this data is used are during the initial setup and in the HLSL code itself, so user error should not occur
 
 
-The following video provides an example of multiple meshes
+The following video provides an example for multiple meshes
 
 {{< video src="../../multipleMeshes.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
-For the buffer we created, we create a unordered access view. This is used to read and write to the buffer from our compute shaders. We also create a shader resource view, so our non compute shaders can read the data in their intended way. This will be done by our vertex shader to output the posision of each mesh representing a particle.
+For the buffer we created, we create an unordered access view. This allows our compute shaders to read from and write to the buffer. We also create a shader resource view so that our non-compute shaders can read the data as intended. Our vertex shader will use this to output the position of each mesh representing a particle
 
 ```c
 result = CreateBufferUAV(DX11::Device, myStructuredBuffer.Get(), myParticleUAV.GetAddressOf());
@@ -116,7 +116,7 @@ if (FAILED(result))
 }
 ```
 
-The dispatch and render passes are the following
+The dispatch and render passes are as following.
 ```c
 RunComputeShader(myComputeShader.Get(), 0, nullptr, nullptr, nullptr, 0, myParticleUAV.Get(), NUM_PARTICLE / 10, 10, 1);
 
@@ -128,7 +128,7 @@ DX11::Context->PSSetConstantBuffers(11, 1, myParticleColorBuffer.GetAddressOf())
 myParticleShader->Render(t);
 ```
 
-This is all that has to be done on the cpu, myParticleShader holds the meshes for the particles themselves, in this case it is just represented by a diamond to give some volume while also keeping the geometry minimal.
+This is all that needs to be done on the CPU. myParticleShader holds the meshes for the particles themselves. In this case, they are represented by a diamond to provide some volume while keeping the geometry minimal.
 
 
 ## Shaders
@@ -213,10 +213,23 @@ projected.xy = (projected.xy + 1) * 0.5f;
 projected.y = 1 - projected.y;
 ```
 
-Next we sample the projected pixel and comapre it to the particles depth. If the particle is whitin a certain range of the projected depth, we do smear collission and add a bit of bounce depending on 
+Next we sample the projected pixel and comapre it to the particles depth. If the particle is whitin a certain range of the projected depth, we do smear collission and add a bit of bounce depending on the velocity and at which angle the collssion happened at.
+
+```hlsl
+float depth = DepthTexture.SampleLevel(defaultSampler, projected.xy, 0).z;
+if (vertexViewPos.z < depth + radius && vertexViewPos.z > depth - radius)
+{
+    float3 normal = NormalTexture.SampleLevel(defaultSampler, projected.xy, 1).xyz * 2 - 1;
+    if (length(BufferInOut[DTid.x].velocity.xyz) < 0)
+    {
+        return;
+    }
+    BufferInOut[DTid.x].velocity.xyz = BufferInOut[DTid.x].velocity.xyz - normal * dot(BufferInOut[DTid.x].velocity.xyz, normal) + normal * max(0, -dot(BufferInOut[DTid.x].velocity.xyz, normal) * length(BufferInOut[DTid.x].velocity.xyz) - 2);
+}
+```
 
 
-
+This produces the following effect.
 {{< video src="../../depthGenerator.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
