@@ -23,7 +23,7 @@ showHeadingAnchors: true
 | **Timeline**  | ~8 weeks 50%  | 
 
 
-{{< video src="/Portfolio/minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../Portfolio/minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
 ## What this is
