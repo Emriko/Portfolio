@@ -47,3 +47,9 @@ buildFuture = true
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+  [params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  URL = "css/custom.css"

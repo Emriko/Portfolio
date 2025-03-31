@@ -1,0 +1,12 @@
+/* You can customize theme styles here */
+.custom-image {
+    width: 500px;
+    height: auto; /* Maintains aspect ratio */
+  }
+  video {
+    max-width: 100%;
+    height: auto;
+}
+strong, b {
+  font-weight: bold !important;
+}

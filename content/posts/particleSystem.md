@@ -23,26 +23,15 @@ showHeadingAnchors: true
 | **Timeline**  | ~8 weeks 50%  | 
 
 
-<video width="800" height="450" controls>
-  <source src="/Portfolio/minSpeedEffect.mp4" type="video/mp4">
-</video>
-
+{{< video src="minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
 
-<video width="800" height="450" controls>
-  <source src="/Portfolio/depthBufferExample.mp4" type="video/mp4">
-</video>
+{{< video src="depthBufferExample.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
+{{< video src="meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
-<video width="800" height="450" controls>
-  <source src="/Portfolio/meshInit.mp4" type="video/mp4">
-</video>
+{{< video src="multipleMeshes.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
-<video width="800" height="450" controls>
-  <source src="/Portfolio/multipleMeshes.mp4" type="video/mp4">
-</video>
-
-<video width="800" height="450" controls>
-  <source src="/Portfolio/needVisuals.mp4" type="video/mp4">
-</video>
+{{< video src="needVisuals.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+<
