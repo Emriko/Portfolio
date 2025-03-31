@@ -1,0 +1,5 @@
+node_modules/
+public
+resources
+themes/
+**/.hugo_build.lock

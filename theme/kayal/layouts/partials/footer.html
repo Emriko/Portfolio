@@ -1,0 +1,13 @@
+<footer>
+  <div class="copyright">
+    {{ with .Site.Params.copyright }} © {{ dateFormat "2006" now }}  {{ . | safeHTML }} {{ end }}
+  </div>
+  {{ if not .Site.Params.removeAttribution }}
+  <div class="attribution">
+    Built with <a href="https://gohugo.io" target="_blank">Hugo</a> & <a href="https://github.com/mnjm/kayal" target="_blank">Kayal</a>
+  </div>
+  {{ end }}
+  {{ if .Site.Params.lastUpdate }}
+  <div>Last update {{ now.Format "Jan 2, 2006" }}</div>
+  {{ end }}
+</footer>
