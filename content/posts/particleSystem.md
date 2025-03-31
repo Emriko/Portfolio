@@ -23,7 +23,7 @@ showHeadingAnchors: true
 | **Timeline**  | ~8 weeks 50%  | 
 
 
-{{< video src="minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../minSpeedEffect.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
 # What this is
@@ -87,14 +87,14 @@ struct Particle
 ```
 With accompanning example
 
-{{< video src="meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../meshInit.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 Where the start positions is the vertex position of the mesh. vColor is the vertex color if the model supports it, and bool data is. The bools are represented by unsigned integers because floats are 4 bytes in hlsl while in c++ they are 1 byte. Prefeably this should be wrapped in a way where this is only done when moving the data to the GPU to remove the possibility of user error. However the only steps where this data is used is durring the inital setup, and in the hlsl code itself. So user error ought not to occur.
 
 The following video provides an example of multiple meshes
 
-{{< video src="multipleMeshes.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../multipleMeshes.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 For the buffer we created, we create a unordered access view. This is used to read and write to the buffer from our compute shaders. We also create a shader resource view, so our non compute shaders can read the data in their intended way. This will be done by our vertex shader to output the posision of each mesh representing a particle.
 
@@ -149,7 +149,7 @@ void main(uint3 DTid : SV_DispatchThreadID)
 ```
 
 This produces the following effect.
-{{< video src="emitterEx.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../emitterEx.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 This effect uses the following vertex shader, with ObjectToWorld as an extra transform to rotate and scale the particles if so desired.
@@ -177,14 +177,18 @@ ParticlePSInput main(ParticleVSInput input)
 }
 ```
 
-As observed above, the particles just fall through the ground making them seem 
+As observed above, the particles just fall through the ground making otherly from the 3D scene. This issue is solved with depth collission.
 
-{{< video src="depthBufferExample.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../depthBufferExample.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 
-{{< video src="needVisuals.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+A clear flaw with this technique is if you do not see the object. It does not provide any data to the depth buffer and the particles do not collise. The following video is an example of this issue.
+
+{{< video src="../../needVisuals.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 
 # Areas of improvement
+
+Some clear stretch goals I peronally had were to implement motion blur to this

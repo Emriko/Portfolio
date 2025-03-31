@@ -53,3 +53,6 @@ buildFuture = true
   # CSS Plugins
   [[params.plugins.css]]
   URL = "css/custom.css"
+
+  [security]
+  enableInlineShortcodes = true

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="content-language" content="en-us" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,26 +17,23 @@
   <meta name="description" content="A Hugo Theme" />
   
   
-  <link rel="canonical" href="/posts/particlesystem/" />
+  <link rel="canonical" href="//localhost:1313/posts/particlesystem/" />
 
-  
-
-
-
-  
-    
   
 
   
     
-  
-
-  
+        <link rel="stylesheet" href="/css/theme.css">
     
   
-
+    
+        <link rel="stylesheet" href="/css/main.css">
+    
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9e645ac00afea3ed21f2052b5e204202d54831205dfc6a247944f65820dc2fffd9810f10a7fdae5112fd7505fd5374f3ec527318d9b05c9611893881bd4e9549.css" integrity="sha512-nmRawAr&#43;o&#43;0h8gUrXiBCAtVIMSBd/GokeUT2WCDcL//ZgQ8Qp/2uURL9dQX9U3Tz7FJzGNmwXJYRiTiBvU6VSQ==" />
+    
+        <link rel="stylesheet" href="/css/custom.css">
+    
+  
 
 
 
@@ -48,7 +45,7 @@
     <link rel="manifest" href="/site.webmanifest" />
   
 
-  <meta property="og:url" content="/posts/particlesystem/">
+  <meta property="og:url" content="//localhost:1313/posts/particlesystem/">
   <meta property="og:site_name" content="Emrik Åberg Wenthzel - Game Programmer">
   <meta property="og:title" content="Compute Shader particle system with Depth collission">
   <meta property="og:description" content="Type Description Engine Penugine Timeline ~8 weeks 50% Your browser does not support the video tag.">
@@ -79,11 +76,6 @@
 
   
   
-  
-
-  
-  
-
 
 
   
@@ -95,7 +87,7 @@
   
   
   
-    <link rel="preload" href="/fonts/Ubuntu-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="//localhost:1313/fonts/Ubuntu-Regular.woff2" as="font" type="font/woff2" crossorigin>
   
 
   
@@ -158,7 +150,7 @@
   </nav>
     <div class="side-menu">
     
-<div id="search-container" data-url="/">
+<div id="search-container" data-url="//localhost:1313/">
   <div class="search">
     <div class="panel">
       <form>
@@ -321,7 +313,7 @@
 </table>
 
 <video  loop width="800" height="450" controls>
-    <source src="minSpeedEffect.mp4" type="video/mp4">
+    <source src="../../minSpeedEffect.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
@@ -393,14 +385,14 @@
 </span></span></code></pre></div><p>With accompanning example</p>
 
 <video  loop width="800" height="450" controls>
-    <source src="meshInit.mp4" type="video/mp4">
+    <source src="../../meshInit.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 <p>Where the start positions is the vertex position of the mesh. vColor is the vertex color if the model supports it, and bool data is. The bools are represented by unsigned integers because floats are 4 bytes in hlsl while in c++ they are 1 byte. Prefeably this should be wrapped in a way where this is only done when moving the data to the GPU to remove the possibility of user error. However the only steps where this data is used is durring the inital setup, and in the hlsl code itself. So user error ought not to occur.</p>
 <p>The following video provides an example of multiple meshes</p>
 
 <video  loop width="800" height="450" controls>
-    <source src="multipleMeshes.mp4" type="video/mp4">
+    <source src="../../multipleMeshes.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 <p>For the buffer we created, we create a unordered access view. This is used to read and write to the buffer from our compute shaders. We also create a shader resource view, so our non compute shaders can read the data in their intended way. This will be done by our vertex shader to output the posision of each mesh representing a particle.</p>
@@ -446,7 +438,7 @@
 </span></span></code></pre></div><p>This produces the following effect.
 
 <video  loop width="800" height="450" controls>
-    <source src="emitterEx.mp4" type="video/mp4">
+    <source src="../../emitterEx.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video></p>
 <p>This effect uses the following vertex shader, with ObjectToWorld as an extra transform to rotate and scale the particles if so desired.</p>
@@ -471,14 +463,16 @@
 </span></span><span style="display:flex;"><span>    output.vertexColor0 <span style="color:#f92672">=</span> Buffer0[input.id].vColor;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> output;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
-<video  loop width="800" height="450" controls>
-    <source src="depthBufferExample.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+</span></span></code></pre></div><p>As observed above, the particles just fall through the ground making otherly from the 3D scene. This issue is solved with depth collission.</p>
 
 <video  loop width="800" height="450" controls>
-    <source src="needVisuals.mp4" type="video/mp4">
+    <source src="../../depthBufferExample.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<p>A clear flaw with this technique is if you do not see the object. It does not provide any data to the depth buffer and the particles do not collise. The following video is an example of this issue.</p>
+
+<video  loop width="800" height="450" controls>
+    <source src="../../needVisuals.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
@@ -493,6 +487,7 @@
  </a>
   
 </h1>
+<p>Some clear stretch goals I peronally had were to implement motion blur to this</p>
 
 
 
@@ -546,16 +541,14 @@
 
   
     
-        
-        <script defer type="text/javascript" src="/js/theme.min.eaccfb587dc18aa6c89ddcfe908efce320a265a23826cb3af2032a3f425a36f9b12c233ec2743b2c1017217c7699a7cc7619483ea2257f88b2b63b7b51bbaaa8.js" integrity="sha512-6sz7WH3BiqbIndz&#43;kI784yCiZaI4Jss68gMqP0JaNvmxLCM&#43;wnQ7LBAXIXx2mafMdhlIPqIlf4iytjt7UbuqqA=="> </script>
+        <script src="/js/theme.js"></script>
       
     
   
 
   
     
-        
-        <script defer type="text/javascript" src="/js/codecopy.min.6319d0ad3eae498a0591b4ec1d52cc0156f5c3cb95390089d7d0ac7fe6dfb183161c14f935d25b5ad896840e2a9d6a23f555a7976954d0a263c24a11272aa747.js" integrity="sha512-YxnQrT6uSYoFkbTsHVLMAVb1w8uVOQCJ19Csf&#43;bfsYMWHBT5NdJbWtiWhA4qnWoj9VWnl2lU0KJjwkoRJyqnRw=="> </script>
+        <script src="/js/codecopy.js"></script>
       
     
   
