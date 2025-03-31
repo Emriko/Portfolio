@@ -6,10 +6,8 @@ title = 'About me'
 **Gameplay and Graphics programmer**
 ___
 {{% figure class="alignright" src="/profile.png#floatleft"  %}}
-Ever since I was young I have been very technical and loved to solve problems. Usually starting with the most intuitive paths and love to try differnet approaches until the pieces eventualyl fall into place.
+Ever since I was young, I have been very technical and loved solving problems. I usually start with the most intuitive approach and enjoy experimenting with different methods until everything eventually falls into place.
 
-After 3 years of computer science courses and a year long stint at Arlanda airpot I found myself at The Game Assembly, where I truly found my programming passion working with what i love.
+After three years of computer science courses and a year-long stint at Arlanda Airport, I found myself at The Game Assembly, where I truly discovered my passion for programming while working on what I love.
 
-In my freetime you will obviously be able to find me playing videogames, but beyond that my main hobby is indoors rockclimbing. (hopefully soon to be outdoors as well)
-
-testing text
+In my free time, you’ll often find me playing video games, but beyond that, my main hobby is indoor rock climbing, hopefully soon to be outdoor climbing as well!
