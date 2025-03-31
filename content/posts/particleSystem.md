@@ -23,4 +23,23 @@ showHeadingAnchors: true
 | **Timeline**  | ~8 weeks 50%  | 
 
 
+<video width="800" height="450" controls>
+  <source src="/depthBufferExample.mp4" type="video/mp4">
+</video>
+
+<video width="800" height="450" controls>
+  <source src="/minSpeedEffect.mp4" type="video/mp4">
+</video>
+
+<video width="800" height="450" controls>
+  <source src="/meshInit.mp4" type="video/mp4">
+</video>
+
+<video width="800" height="450" controls>
+  <source src="/multipleMeshes.mp4" type="video/mp4">
+</video>
+
+<video width="800" height="450" controls>
+  <source src="/needVisuals.mp4" type="video/mp4">
+</video>
 <!--more-->
