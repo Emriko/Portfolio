@@ -206,9 +206,18 @@ float4 vertexViewPos = mul(WorldToCamera, vertexWorldPos);
 float4 projected = mul(CameraToProjection, vertexViewPos);
 ```
 
+We then convert the projected values into DirectX3D11 projectio space with the following.
+```hlsl
+projected.xyz /= projected.w;
+projected.xy = (projected.xy + 1) * 0.5f;
+projected.y = 1 - projected.y;
+```
+
+Next we sample the projected pixel and comapre it to the particles depth. If the particle is whitin a certain range of the projected depth, we do smear collission and add a bit of bounce depending on 
 
 
-{{< video src="../../depthBufferExample.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+
+{{< video src="../../depthGenerator.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 
 
