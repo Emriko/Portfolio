@@ -32,9 +32,9 @@ I would encourage you to download the game and try it out if you have the time!
 
 
 # Credits
-| Name                                                      | Title |
-| -----------                                               | ----------- |
-| [**William Arnber** ](https://williamarnberg.com/)        | Programming       |
+| Name                                                      | Title             |
+| -----------                                               | -----------       |
+| [**William Arnberg** ](https://williamarnberg.com/)       | Programming       |
 | [**Gustaf Engsner** ](https://gengsner.github.io/)        | Programming       |
 | **Emrik Åberg Wenthzel**                                  | Programming       |
 | [**Carl Anderson**](https://carlandersson.artstation.com/)| Graphics and vfx  |

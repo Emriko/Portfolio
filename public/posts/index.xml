@@ -27,7 +27,14 @@
       <link>//localhost:1313/posts/cookinggrandma/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
       <guid>//localhost:1313/posts/cookinggrandma/</guid>
-      <description> Type Description Engine Unity Timeline 3 days Download Link </description>
+      <description> Type Description Engine Unity Timeline 3 days Download Link</description>
+    </item>
+    <item>
+      <title>Quake inspired Movement with Cod Zombies adjustments</title>
+      <link>//localhost:1313/posts/codzombiesmovement/</link>
+      <pubDate>Wed, 26 Mar 2025 15:31:00 +0200</pubDate>
+      <guid>//localhost:1313/posts/codzombiesmovement/</guid>
+      <description> Type Description Engine Unity Timeline ~1 week 50% </description>
     </item>
   </channel>
 </rss>
