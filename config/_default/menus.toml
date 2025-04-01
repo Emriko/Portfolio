@@ -18,6 +18,12 @@
  name = "about"
  title = "About"
  url = "/about/"
+ weight = 2
+
+ [[main]]
+ name = "Resume"
+ title = "Resume"
+ url = "https://drive.google.com/file/d/1uc38UoinMdUTwdNSdBs7Lz6WNHRCj5gW/view?usp=sharing"
  weight = 3
 
  [[main]]
