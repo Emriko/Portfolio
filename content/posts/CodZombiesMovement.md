@@ -23,34 +23,34 @@ showHeadingAnchors: true
 <!--more-->
 
 ## Purpose
-For a game project with the goal of mimicing CoD Zombies we needed a character controller and fluid movement. For this purpose inital system was build around the quake 2 movement for it's plenitufl documentation and fluidity of movement. However some quirks of this system made new systems neccisary to fully reach a working in-game implementation.
+For a game project aiming to mimic CoD Zombies, we needed a character controller and fluid movement. The initial system was built around Quake 2 movement due to its plentiful documentation and fluidity. However, some quirks of this system necessitated additional modifications to achieve a fully functional in-game implementation.
 
-This movement was implemented on a PhysX object. However this is a kinematic object so the motion is fully controlled by the movement controller and later on validated by PhysX.
+This movement was implemented on a PhysX object. However, since this is a kinematic object, motion is fully controlled by the movement controller and later validated by PhysX.
 ## Quake movement
-Getting movemnt that feels good and intuitive to use by following in quakes footsteps is not a hard task. With this movement system being analyzed countless times, the documentation of what makes it click is mostly set in stone. With all of this and the IdTech 2 engine to refer to this was set up within the first day.
+Creating movement that feels good and intuitive by following in Quake’s footsteps is not a difficult task. This movement system has been analyzed countless times, and the documentation detailing what makes it work is well established. With these resources and the IdTech 2 engine as a reference, the initial setup was completed within the first day.
 
 ## MW3 adjustments
-This system, though it feels well to use, is not fully suited for our CoD zombies purpose. To fix this, studying of Call of Duty: Modern Warfare 3's movemnt had to be done. This version was choosen due to internal cloes communities finding this to be some of the best feeling movemnt in the series. It also has a custom client where the movement can be tested in sandbox enviourments. 
+While this system feels great to use, it is not entirely suited for our CoD Zombies-inspired gameplay. To address this, we studied the movement mechanics of Call of Duty: Modern Warfare 3. This version was chosen due to internal close communities considering it one of the best-feeling movement systems in the series. Additionally, MW3 has a custom client where movement can be tested in sandbox environments.
 
 ### Bunny hopping
-One of the core features in the Quake IdTech movement, and the engines inspired by it is the mechanic of bunny hopping. This mechanic is based in the differance in leght of a wished velocity, current velocity, and wished direction is used to gaint more speed when the movement is turing towards a new direction. This allows for continuous increase of speed while in the air and not being effected by ground friction. 
+One of the core features of Quake's IdTech movement, and the engines inspired by it, is bunny hopping. This mechanic relies on the difference in length between the desired velocity, current velocity, and desired direction to gain additional speed when changing direction mid-air. This allows for a continuous increase in speed while airborne, avoiding the effects of ground friction.
 
-To keep this effect going, one jumps on the first frame the player lands to avoid triggering the ground friction. This effect is indeed very fun to use and feels quite good to preform, so why is it a problem. In a round based CoD Zombies inspired game, kiting zombies effectily is vital. Using your sorroundings to be able to keep a fair distance while not being caught offguard is a key gameplay element. So if you can just fly away at incredible speeds this becomes a bit redundant.
+To maintain this effect, players must jump on the first frame upon landing to prevent triggering ground friction. While this mechanic is fun and feels great to perform, it poses a problem in a round-based CoD Zombies-style game. Effective kiting of zombies is a vital gameplay element, requiring players to use their surroundings to maintain distance without being caught off guard. If players can continuously gain speed and evade threats effortlessly, the challenge of the game is diminished.
 
-So one solution would be to add air friction. Sounds like a clear fix. One problem with this is that the movement instantly stars feeling as smooth by this, and one other key feature yet to be mentioned gets destroyed by this. That would be long jumping
+A potential solution is adding air friction. While this might seem like a clear fix, it significantly reduces the smoothness of movement and interferes with another key feature: long jumping.
 
 ### Long Jumping
-Long jumping is the act of almost performing a bunny hop but only once. This allows for one long fast jump by strafing just before and in the air when you jump. A core mechanic in higher levels of CoD Zombies play to get out of thight spots. 
+Long jumping involves executing a single extended jump by strafing just before and during takeoff. This technique is crucial in high-level CoD Zombies play for escaping tight situations quickly.
 
 ### The fix
-What can be done to fix this then? Well, forcing the players to stay on the ground for a bit to force the application of ground friction would be a way. To achieve that, one implementation is to introduce jump stamina. Exactly that was done. After jumping, an internal counter goes up for how many times you jump in a row, effectivly tiring out the player if jumping too much in a row. This is then used to delaying the player from jumping again. 
+How can we balance these mechanics? One solution is to enforce brief ground contact to apply ground friction. This was implemented by introducing a jump stamina system. Each consecutive jump increases an internal counter, effectively tiring out the player if they jump too frequently. This mechanic introduces a delay before the player can jump again, preventing excessive bunny hopping while preserving movement fluidity.
 
 ### Polishes
-Most developers know, limiting the player from doing something does not feel too well. To solve this we need to give the player the illusion of still landing while being grounded. This implementation achieved this by using the view model of the player to keep moving, scaling with the jump stamina. Making it feel more intuitive with the wait.
+As most developers know, restricting player movement often leads to frustration. To counteract this, we needed to create the illusion of grounded movement even while enforcing the jump delay. This was achieved by adjusting the player's view model to maintain motion, scaling with the jump stamina to make the wait feel more natural.
 
-While also handling input buffering to be able to jump without having to time the landing or waiting for the stamina was key to the fluid feeling of the movement syste.
+Additionally, input buffering was implemented, allowing players to jump smoothly without needing to precisely time their landings or wait for stamina recovery. This was key to maintaining the fluid feel of the movement system.
 
 ## Areas of improvement
-A lot of the areas of improvment land on the systems around the movemnt. More solid sounds to acompany what you are currently doing, or clearer animations to make it feel more fluid would be on the top of the list. However these were not my areas of implementation.
+Many areas for improvement lie in the surrounding systems rather than the movement itself. More refined sound design to reflect player actions and clearer animations to enhance fluidity would significantly improve the experience. However, thses were not my areas of responsibility.
 
-In the system itself, most the improvemnt lay in tweaking of variables to mimic my referances more properly.
+Within the movement system itself, most improvements would involve fine-tuning variables to better replicate the reference movement mechanics.

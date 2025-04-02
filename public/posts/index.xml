@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Emrik Åberg Wenthzel - Game Programmer</title>
-    <link>//localhost:51734/posts/</link>
+    <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on Emrik Åberg Wenthzel - Game Programmer</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Mar 2025 15:32:46 +0100</lastBuildDate>
-    <atom:link href="//localhost:51734/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Compute Shader particle system with Depth collission</title>
-      <link>//localhost:51734/posts/particlesystem/</link>
+      <link>//localhost:1313/posts/particlesystem/</link>
       <pubDate>Wed, 26 Mar 2025 15:32:46 +0100</pubDate>
-      <guid>//localhost:51734/posts/particlesystem/</guid>
+      <guid>//localhost:1313/posts/particlesystem/</guid>
       <description> Type Description Engine Penugine Timeline ~8 weeks 50% Your browser does not support the video tag.</description>
     </item>
     <item>
       <title>Screen Space Ambient Occlusion</title>
-      <link>//localhost:51734/posts/ssao/</link>
+      <link>//localhost:1313/posts/ssao/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:50 +0100</pubDate>
-      <guid>//localhost:51734/posts/ssao/</guid>
+      <guid>//localhost:1313/posts/ssao/</guid>
       <description> Type Description Engine Penugine Timeline ~1-2 weeks 50% </description>
     </item>
     <item>
       <title>Cooking Grandma 👵</title>
-      <link>//localhost:51734/posts/cookinggrandma/</link>
+      <link>//localhost:1313/posts/cookinggrandma/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
-      <guid>//localhost:51734/posts/cookinggrandma/</guid>
+      <guid>//localhost:1313/posts/cookinggrandma/</guid>
       <description> Type Description Engine Unity Timeline 3 days Download Link </description>
     </item>
     <item>
       <title>Quake inspired Movement with Cod Zombies adjustments</title>
-      <link>//localhost:51734/posts/codzombiesmovement/</link>
+      <link>//localhost:1313/posts/codzombiesmovement/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0200</pubDate>
-      <guid>//localhost:51734/posts/codzombiesmovement/</guid>
+      <guid>//localhost:1313/posts/codzombiesmovement/</guid>
       <description> Type Description Engine Penugine Timeline ~1 week 50% </description>
     </item>
   </channel>
