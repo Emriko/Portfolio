@@ -10,7 +10,7 @@ showReadingTime: false
 showTags: false
 showPagination: false
 invertPagination: false
-showToC: false
+showToC: true
 openToC: false
 showComments: false
 showHeadingAnchors: false
