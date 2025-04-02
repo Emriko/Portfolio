@@ -2,45 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Emrik Åberg Wenthzel - Game Programmer</title>
-    <link>//localhost:1313/</link>
+    <link>//localhost:51734/</link>
     <description>Recent content on Emrik Åberg Wenthzel - Game Programmer</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Mar 2025 15:32:46 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Apr 2025 11:08:06 +0200</lastBuildDate>
+    <atom:link href="//localhost:51734/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game Projects</title>
+      <link>//localhost:51734/projects/</link>
+      <pubDate>Wed, 02 Apr 2025 11:08:06 +0200</pubDate>
+      <guid>//localhost:51734/projects/</guid>
+      <description> Zomb:E Type Description Genre First Person Shooter Engine Penugine Contributions Graphics Engine and Rendering pipeline Player Movement Combat and Gunplay Powerups VFX and correlating system Spite: Shadow of the Spirder Lily Type Description Genre Top-down action RPG Engine Penugine Contributions Graphics Engine and Rendering pipeline Combat Pathfinding Carl Off Duty Type Description Genre Top-down action adventure Engine The Game Engine (Proprietary school engine) Contributions Game Grid Player movement Combat Shadows Fallen Star Type Description Genre 2.5D Platformer Engine The Game Engine (Proprietary school engine) Contributions Collission Particle System Movement Detective Rodent Type Description Genre Mobile puzzle game Engine Unity Contributions Character controller Level interactables Planet Hopper Type Description Genre Runner Game Engine Unity Contributions Player movement Pickups Effects Collission </description>
+    </item>
     <item>
       <title>Compute Shader particle system with Depth collission</title>
-      <link>//localhost:1313/posts/particlesystem/</link>
+      <link>//localhost:51734/posts/particlesystem/</link>
       <pubDate>Wed, 26 Mar 2025 15:32:46 +0100</pubDate>
-      <guid>//localhost:1313/posts/particlesystem/</guid>
+      <guid>//localhost:51734/posts/particlesystem/</guid>
       <description> Type Description Engine Penugine Timeline ~8 weeks 50% Your browser does not support the video tag.</description>
     </item>
     <item>
       <title>Screen Space Ambient Occlusion</title>
-      <link>//localhost:1313/posts/ssao/</link>
+      <link>//localhost:51734/posts/ssao/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:50 +0100</pubDate>
-      <guid>//localhost:1313/posts/ssao/</guid>
+      <guid>//localhost:51734/posts/ssao/</guid>
       <description> Type Description Engine Penugine Timeline ~1-2 weeks 50% </description>
     </item>
     <item>
       <title>Cooking Grandma 👵</title>
-      <link>//localhost:1313/posts/cookinggrandma/</link>
+      <link>//localhost:51734/posts/cookinggrandma/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0100</pubDate>
-      <guid>//localhost:1313/posts/cookinggrandma/</guid>
-      <description> Type Description Engine Unity Timeline 3 days Download Link</description>
+      <guid>//localhost:51734/posts/cookinggrandma/</guid>
+      <description> Type Description Engine Unity Timeline 3 days Download Link </description>
     </item>
     <item>
       <title>Quake inspired Movement with Cod Zombies adjustments</title>
-      <link>//localhost:1313/posts/codzombiesmovement/</link>
+      <link>//localhost:51734/posts/codzombiesmovement/</link>
       <pubDate>Wed, 26 Mar 2025 15:31:00 +0200</pubDate>
-      <guid>//localhost:1313/posts/codzombiesmovement/</guid>
-      <description> Type Description Engine Unity Timeline ~1 week 50% </description>
+      <guid>//localhost:51734/posts/codzombiesmovement/</guid>
+      <description> Type Description Engine Penugine Timeline ~1 week 50% </description>
     </item>
     <item>
       <title>About me</title>
-      <link>//localhost:1313/about/</link>
+      <link>//localhost:51734/about/</link>
       <pubDate>Wed, 26 Mar 2025 14:10:46 +0100</pubDate>
-      <guid>//localhost:1313/about/</guid>
+      <guid>//localhost:51734/about/</guid>
       <description>Gameplay and Graphics programmer
 Ever since I was young, I have been very technical and loved solving problems. I usually start with the most intuitive approach and enjoy experimenting with different methods until everything eventually falls into place.
 After three years of computer science courses and a year-long stint at Arlanda Airport, I found myself at The Game Assembly, where I truly discovered my passion for programming while working on what I love.
