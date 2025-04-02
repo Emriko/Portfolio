@@ -4,16 +4,16 @@ date: 2025-04-02T11:08:06+02:00
 draft: false
 hidden: false
 externalURL: false
-showDate: true
-showModDate: true
+showDate: false
+showModDate: false
 showReadingTime: false
-showTags: true
-showPagination: true
-invertPagination: true
-showToC: true
+showTags: false
+showPagination: false
+invertPagination: false
+showToC: false
 openToC: false
 showComments: false
-showHeadingAnchors: true
+showHeadingAnchors: false
 ---
 ## Zomb-E
 {{% figure class="alignright" src="/Zomb-E.jpg#floatleft"  %}}
