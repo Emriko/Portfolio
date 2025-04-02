@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/projects/</loc>
+    <loc>//localhost:52586/projects/</loc>
     <lastmod>2025-04-02T11:08:06+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/particlesystem/</loc>
+    <loc>//localhost:52586/posts/particlesystem/</loc>
     <lastmod>2025-03-26T15:32:46+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>//localhost:52586/posts/</loc>
     <lastmod>2025-03-26T15:32:46+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/ssao/</loc>
+    <loc>//localhost:52586/posts/ssao/</loc>
     <lastmod>2025-03-26T15:31:50+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/cookinggrandma/</loc>
+    <loc>//localhost:52586/posts/cookinggrandma/</loc>
     <lastmod>2025-03-26T15:31:00+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/posts/codzombiesmovement/</loc>
+    <loc>//localhost:52586/posts/codzombiesmovement/</loc>
     <lastmod>2025-03-26T15:31:00+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/</loc>
+    <loc>//localhost:52586/</loc>
     <lastmod>2025-03-26T14:14:21+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>//localhost:52586/about/</loc>
     <lastmod>2025-03-26T14:10:46+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>//localhost:52586/categories/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>//localhost:52586/tags/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
