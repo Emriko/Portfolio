@@ -20,7 +20,7 @@ showHeadingAnchors: true
 | **Engine**    | Penugine    |
 | **Timeline**  | ~1 week 50% |
 
-{{< video src="../../../Portfolio/movementShowcase.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../../Portfolio/bluredShowcaesBlurred.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
 ## Purpose
@@ -45,7 +45,7 @@ A potential solution is adding air friction. While this might seem like a clear 
 
 ### Long Jumping
 
-{{< video src="../../../Portfolio/longjump.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+{{< video src="../../../Portfolio/longjumpBlurred.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 
 Long jumping involves executing a single extended jump by strafing just before and during takeoff. This technique is crucial in high-level CoD Zombies play for escaping tight situations quickly.
 
