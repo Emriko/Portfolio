@@ -1,6 +1,6 @@
 ---
 title: 'Quake inspired Movement with Cod Zombies adjustments'
-date: 2025-03-26T15:31:00+02:00
+date: 2025-03-26T15:31:02+01:00
 draft: false
 hidden: false
 externalURL: false
@@ -20,6 +20,7 @@ showHeadingAnchors: true
 | **Engine**    | Penugine    |
 | **Timeline**  | ~1 week 50% |
 
+{{< video src="../../../Portfolio/movementShowcase.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
 <!--more-->
 
 ## Purpose
@@ -33,6 +34,9 @@ Creating movement that feels good and intuitive by following in Quake’s footst
 While this system feels great to use, it is not entirely suited for our CoD Zombies-inspired gameplay. To address this, we studied the movement mechanics of Call of Duty: Modern Warfare 3. This version was chosen due to internal close communities considering it one of the best-feeling movement systems in the series. Additionally, MW3 has a custom client where movement can be tested in sandbox environments.
 
 ### Bunny hopping
+
+{{< video src="../../../Portfolio/bhop.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+
 One of the core features of Quake's IdTech movement, and the engines inspired by it, is bunny hopping. This mechanic relies on the difference in length between the desired velocity, current velocity, and desired direction to gain additional speed when changing direction mid-air. This allows for a continuous increase in speed while airborne, avoiding the effects of ground friction.
 
 To maintain this effect, players must jump on the first frame upon landing to prevent triggering ground friction. While this mechanic is fun and feels great to perform, it poses a problem in a round-based CoD Zombies-style game. Effective kiting of zombies is a vital gameplay element, requiring players to use their surroundings to maintain distance without being caught off guard. If players can continuously gain speed and evade threats effortlessly, the challenge of the game is diminished.
@@ -40,6 +44,9 @@ To maintain this effect, players must jump on the first frame upon landing to pr
 A potential solution is adding air friction. While this might seem like a clear fix, it significantly reduces the smoothness of movement and interferes with another key feature: long jumping.
 
 ### Long Jumping
+
+{{< video src="../../../Portfolio/longjump.mp4" autoplay="false" loop="true" width="800" height="450" >}}  
+
 Long jumping involves executing a single extended jump by strafing just before and during takeoff. This technique is crucial in high-level CoD Zombies play for escaping tight situations quickly.
 
 ### The fix
